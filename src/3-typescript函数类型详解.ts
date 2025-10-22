@@ -80,3 +80,4 @@ createUser({
   age: 24,
 });
 // createUser('kobe');
+export {};

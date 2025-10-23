@@ -80,4 +80,23 @@ createUser({
   age: 24,
 });
 // createUser('kobe');
+// 实例：实现一个通用的 getLen 工具函数
+/* 
+1.传入 字符串 → 返回 string.length
+2.传入 数组 → 返回 array.length
+3.禁止传入其他无 length 属性的类型
+*/
+function getLen1(arg: string | any[]): number {
+  return arg.length; // ✅ string 和 array 都有 .length
+}
+function getLen(arg: string): number;
+function getLen(arg: any[]): number;
+function getLen(arg: string | any[]): number {
+  return arg.length;
+}
+// 鸭子类型
+function getLen3(arg: { length: number }): number {
+  return arg.length;
+}
+
 export {};
